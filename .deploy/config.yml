@@ -1,0 +1,24 @@
+name: songbird
+service: <FILL IN>
+org: <FILL IN>
+projectDirectory: app
+
+qa:
+  taskRole: ecs.task-execution
+  executionRole: ecs.task-execution
+  deployment:
+    command: ["npm", "start"]
+    cpu: 1
+    memory: 128
+    port: 3001
+    desiredCount: 1
+    version: latest
+  loadBalancer:
+    targetGroupArn: <FILL IN>
+  logging:
+    logDriver: awslogs
+    options:
+      awslogs-group: /aws/ecs/songbird
+      awslogs-region: us-east-1
+      awslogs-stream-prefix: ecs
+
