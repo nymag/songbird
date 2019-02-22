@@ -4,8 +4,8 @@ org: <FILL IN>
 projectDirectory: app
 
 qa:
-  taskRole: ecs.task-execution
-  executionRole: ecs.task-execution
+  taskRole: <FILL IN>
+  executionRole: <FILL IN>
   deployment:
     command: ["npm", "start"]
     cpu: 1
@@ -15,10 +15,3 @@ qa:
     version: latest
   loadBalancer:
     targetGroupArn: <FILL IN>
-  logging:
-    logDriver: awslogs
-    options:
-      awslogs-group: /aws/ecs/songbird
-      awslogs-region: us-east-1
-      awslogs-stream-prefix: ecs
-
